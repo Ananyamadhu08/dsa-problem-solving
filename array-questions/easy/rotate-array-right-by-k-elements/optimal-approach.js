@@ -6,8 +6,6 @@ function reverseArr(arr, start, end) {
     start++;
     end--;
   }
-
-  return arr;
 }
 
 function rotateArrRight(arr, k) {
