@@ -40,3 +40,6 @@ let matrix = [
 setMatrixZeros(matrix);
 
 console.log(matrix);
+
+// Time complexity: O(rows * cols)
+// Space complexity: O(1)
