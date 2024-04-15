@@ -37,5 +37,5 @@ for (let i = 0; i < result.length; i++) {
   console.log(result[i].join(" "));
 }
 
-// Time complexity: O(row^2)
+// Time complexity: O(row^3)
 // Space complexity: O(row^2)
