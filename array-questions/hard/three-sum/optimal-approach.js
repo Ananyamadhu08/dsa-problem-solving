@@ -1,7 +1,7 @@
 // Given an array of integers, find unique triplets that add up to give a sum of zero.
 
 function threeSum(arr) {
-  let n = arr.length;
+  const n = arr.length;
 
   arr.sort((a, b) => a - b);
 
@@ -14,7 +14,7 @@ function threeSum(arr) {
     let k = n - 1;
 
     while (j < k) {
-      let sum = arr[i] + arr[j] + arr[k];
+      const sum = arr[i] + arr[j] + arr[k];
 
       if (sum < 0) {
         j++;
