@@ -3,7 +3,7 @@
 function fourSum(arr, target) {
   const n = arr.length;
 
-  let quadrupletsArr = [];
+  let quadrupletsSet = new Set();
 
   for (let i = 0; i < n; i++) {
     for (let j = i + 1; j < n; j++) {
@@ -16,16 +16,14 @@ function fourSum(arr, target) {
 
             tempArr.sort((a, b) => a - b);
 
-            quadrupletsArr.push(tempArr);
+            quadrupletsSet.add(JSON.stringify(tempArr));
           }
         }
       }
     }
   }
 
-  let quadrupletsSet = new Set(quadrupletsArr.map(JSON.stringify));
-
-  quadrupletsArr = Array.from(quadrupletsSet).map(JSON.parse);
+  let quadrupletsArr = Array.from(quadrupletsSet).map(JSON.parse);
 
   return quadrupletsArr;
 }
