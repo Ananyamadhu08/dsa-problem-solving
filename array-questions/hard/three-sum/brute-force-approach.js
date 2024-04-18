@@ -3,7 +3,7 @@
 function threeSum(arr) {
   const n = arr.length;
 
-  let tripletsArr = [];
+  let tripletsSet = new Set();
 
   for (let i = 0; i < n; i++) {
     for (let j = i + 1; j < n; j++) {
@@ -13,15 +13,13 @@ function threeSum(arr) {
 
           tempArr.sort((a, b) => a - b);
 
-          tripletsArr.push(tempArr);
+          tripletsSet.add(JSON.stringify(tempArr));
         }
       }
     }
   }
 
-  let tripletsSet = new Set(tripletsArr.map(JSON.stringify));
-
-  tripletsArr = Array.from(tripletsSet).map(JSON.parse);
+  let tripletsArr = Array.from(tripletsSet).map(JSON.parse);
 
   return tripletsArr;
 }
