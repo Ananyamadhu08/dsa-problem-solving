@@ -56,7 +56,7 @@ function countInversions(arr) {
   return count;
 }
 
-const numArr = [5, 3, 2, 1, 4];
+const numArr = [5, 3, 2, 4, 1];
 
 const result = countInversions(numArr);
 
