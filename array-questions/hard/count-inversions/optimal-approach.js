@@ -1,7 +1,7 @@
 // Given an array of integers, count the inversions of the array.
 
 function mergeAndCount(arr, low, mid, high) {
-  let temp = [];
+  let tempArr = [];
 
   let left = low;
   let right = mid + 1;
@@ -10,27 +10,27 @@ function mergeAndCount(arr, low, mid, high) {
 
   while (left <= mid && right <= high) {
     if (arr[left] <= arr[right]) {
-      temp.push(arr[left]);
+      tempArr.push(arr[left]);
       left++;
     } else {
-      temp.push(arr[right]);
+      tempArr.push(arr[right]);
       count += mid - left + 1;
       right++;
     }
   }
 
   while (left <= mid) {
-    temp.push(arr[left]);
+    tempArr.push(arr[left]);
     left++;
   }
 
   while (right <= high) {
-    temp.push(arr[right]);
+    tempArr.push(arr[right]);
     right++;
   }
 
   for (let i = low; i <= high; i++) {
-    arr[i] = temp[i - low];
+    arr[i] = tempArr[i - low];
   }
 
   return count;
