@@ -5,7 +5,7 @@ function computeExponentiation(base, exponent) {
   let currentBase = base;
 
   while (exponent > 0) {
-    if (exponent % 2) {
+    if (exponent % 2 === 1) {
       exponent--;
 
       result *= currentBase;
@@ -41,5 +41,5 @@ const result = findNthRoot(num, exponent);
 
 console.log(result);
 
-// Time complexity: O(N * log(exponent))
+// Time complexity: O(num * log(exponent))
 // Space complexity: O(1)
