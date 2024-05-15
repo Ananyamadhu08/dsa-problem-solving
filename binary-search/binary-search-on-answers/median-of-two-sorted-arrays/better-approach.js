@@ -8,8 +8,8 @@ function medianOfTwoSortedArrays(arrOne, arrTwo) {
 
   let indexTracker = 0;
 
-  const medianElementIndexOne = Math.floor(totalLength / 2);
-  const medianElementIndexTwo = medianElementIndexOne - 1;
+  const medianIndexOne = Math.floor(totalLength / 2);
+  const medianIndexTwo = medianIndexOne - 1;
 
   let medianElementOne = -1;
   let medianElementTwo = -1;
@@ -19,18 +19,14 @@ function medianOfTwoSortedArrays(arrOne, arrTwo) {
 
   while (left < n && right < m) {
     if (arrOne[left] <= arrTwo[right]) {
-      if (indexTracker === medianElementIndexOne)
-        medianElementOne = arrOne[left];
-      if (indexTracker === medianElementIndexTwo)
-        medianElementTwo = arrOne[left];
+      if (indexTracker === medianIndexOne) medianElementOne = arrOne[left];
+      if (indexTracker === medianIndexTwo) medianElementTwo = arrOne[left];
 
       indexTracker++;
       left++;
     } else {
-      if (indexTracker === medianElementIndexOne)
-        medianElementOne = arrTwo[right];
-      if (indexTracker === medianElementIndexTwo)
-        medianElementTwo = arrTwo[right];
+      if (indexTracker === medianIndexOne) medianElementOne = arrTwo[right];
+      if (indexTracker === medianIndexTwo) medianElementTwo = arrTwo[right];
 
       indexTracker++;
       right++;
@@ -38,18 +34,16 @@ function medianOfTwoSortedArrays(arrOne, arrTwo) {
   }
 
   while (left < n) {
-    if (indexTracker === medianElementIndexOne) medianElementOne = arrOne[left];
-    if (indexTracker === medianElementIndexTwo) medianElementTwo = arrOne[left];
+    if (indexTracker === medianIndexOne) medianElementOne = arrOne[left];
+    if (indexTracker === medianIndexTwo) medianElementTwo = arrOne[left];
 
     indexTracker++;
     left++;
   }
 
   while (right < m) {
-    if (indexTracker === medianElementIndexOne)
-      medianElementOne = arrTwo[right];
-    if (indexTracker === medianElementIndexTwo)
-      medianElementTwo = arrTwo[right];
+    if (indexTracker === medianIndexOne) medianElementOne = arrTwo[right];
+    if (indexTracker === medianIndexTwo) medianElementTwo = arrTwo[right];
 
     indexTracker++;
     right++;
