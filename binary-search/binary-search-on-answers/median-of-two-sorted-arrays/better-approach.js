@@ -5,6 +5,7 @@ function medianOfTwoSortedArrays(arrOne, arrTwo) {
   const m = arrTwo.length;
 
   const totalLength = n + m;
+
   let indexTracker = 0;
 
   const medianElementIndexOne = Math.floor(totalLength / 2);
@@ -21,7 +22,7 @@ function medianOfTwoSortedArrays(arrOne, arrTwo) {
       if (indexTracker === medianElementIndexOne)
         medianElementOne = arrOne[left];
       if (indexTracker === medianElementIndexTwo)
-        medianElementTwo = arrTwo[left];
+        medianElementTwo = arrOne[left];
 
       indexTracker++;
       left++;
@@ -38,7 +39,7 @@ function medianOfTwoSortedArrays(arrOne, arrTwo) {
 
   while (left < n) {
     if (indexTracker === medianElementIndexOne) medianElementOne = arrOne[left];
-    if (indexTracker === medianElementIndexTwo) medianElementTwo = arrTwo[left];
+    if (indexTracker === medianElementIndexTwo) medianElementTwo = arrOne[left];
 
     indexTracker++;
     left++;
@@ -54,7 +55,7 @@ function medianOfTwoSortedArrays(arrOne, arrTwo) {
     right++;
   }
 
-  if (n % 2 === 1) {
+  if (totalLength % 2 === 1) {
     return medianElementOne;
   }
 
