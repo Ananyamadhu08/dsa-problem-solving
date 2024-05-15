@@ -33,11 +33,11 @@ function medianOfTwoSortedArrays(arrOne, arrTwo) {
     return median;
   }
 
-  const medianElementIndexOne = totalLength / 2;
-  const medianElementIndexTwo = totalLength / 2 - 1;
+  const medianIndexOne = totalLength / 2;
+  const medianIndexTwo = totalLength / 2 - 1;
 
   const sumOfMedianElements =
-    mergedArr[medianElementIndexOne] + mergedArr[medianElementIndexTwo];
+    mergedArr[medianIndexOne] + mergedArr[medianIndexTwo];
 
   const median = sumOfMedianElements / 2;
 
