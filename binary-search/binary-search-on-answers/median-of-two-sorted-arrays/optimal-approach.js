@@ -41,9 +41,9 @@ function medianOfTwoSortedArrays(arrOne, arrTwo) {
         return median;
       }
     } else if (l1 > r2) {
-      high = mid - 1;
+      high = midOne - 1;
     } else {
-      low = mid + 1;
+      low = midOne + 1;
     }
   }
 
