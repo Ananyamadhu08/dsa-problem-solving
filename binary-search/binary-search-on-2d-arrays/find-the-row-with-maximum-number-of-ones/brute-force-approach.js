@@ -33,5 +33,5 @@ const result = findRowWithMaximumOnes(matrix);
 
 console.log(result);
 
-// Time complexity: O(row * cols)
+// Time complexity: O(rows * cols)
 // Space complexity: O(1)

@@ -50,5 +50,5 @@ const result = findRowWithMaximumOnes(matrix);
 
 console.log(result);
 
-// Time complexity: O(row * log(cols))
+// Time complexity: O(rows * log(cols))
 // Space complexity: O(1)
