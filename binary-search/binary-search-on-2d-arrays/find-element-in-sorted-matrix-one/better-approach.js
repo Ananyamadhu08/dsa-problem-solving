@@ -48,5 +48,5 @@ const result = findElementInMatrix(matrix, target);
 
 console.log(result);
 
-// Time complexity: O(row * log(cols))
+// Time complexity: O(rows * log(cols))
 // Space complexity: O(1)
