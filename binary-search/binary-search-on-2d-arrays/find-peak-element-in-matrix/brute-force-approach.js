@@ -38,5 +38,5 @@ const result = findPeakElementInMatrix(matrix);
 
 console.log(result);
 
-// Time complexity: O(row * cols * 4)
+// Time complexity: O(rows * cols * 4)
 // Space complexity: O(1)
