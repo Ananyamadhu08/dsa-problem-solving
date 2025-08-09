@@ -7,36 +7,38 @@ class Node {
   }
 }
 
-function addTwoNumbers(head1, head2) {
-  // Convert both linked lists to numbers (in correct order)
+function addTwoNumbers(l1, l2) {
   let num1 = "";
   let num2 = "";
 
-  while (head1 !== null) {
-    num1 = head1.value + num1; // Prepend to build the number
-    head1 = head1.next;
+  // Build number string from l1 (prepend to reverse order)
+  while (l1 !== null) {
+    num1 = l1.value + num1;
+    l1 = l1.next;
   }
 
-  while (head2 !== null) {
-    num2 = head2.value + num2;
-    head2 = head2.next;
+  // Build number string from l2 (prepend to reverse order)
+  while (l2 !== null) {
+    num2 = l2.value + num2;
+    l2 = l2.next;
   }
 
-  // Add the two numbers using BigInt to handle large sums
+  // Add numbers using BigInt for large inputs
   const sum = BigInt(num1) + BigInt(num2);
 
-  // Convert the sum back to a reversed linked list
+  // Convert sum to reversed array of digits
   const sumStrArr = sum.toString().split("").reverse();
 
   const dummy = new Node(0);
   let current = dummy;
 
+  // Build linked list from reversed digits
   for (let digit of sumStrArr) {
     current.next = new Node(Number(digit));
     current = current.next;
   }
 
-  return dummy.next;
+  return dummy.next; // Skip dummy node
 }
 
 const l1Arr = [4, 5, 6]; // Represents 654 (reverse order)
