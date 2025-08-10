@@ -7,7 +7,7 @@ class Node {
   }
 }
 
-function sort012(head) {
+function sortList(head) {
   // Edge cases: empty list or single node -> already "sorted"
   if (head === null || head.next === null) return head;
 
@@ -45,7 +45,7 @@ for (let i = 1; i < numArr.length; i++) {
   mover.next = temp;
   mover = temp;
 }
-const result = sort012(head);
+const result = sortList(head);
 
 console.log(result);
 
