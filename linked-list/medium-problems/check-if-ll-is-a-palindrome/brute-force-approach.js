@@ -7,7 +7,7 @@ class Node {
   }
 }
 
-function isPalindromeBruteForce(head) {
+function isPalindrome(head) {
   if (head === null || head.next === null) return true; // Single node or empty list is palindrome
 
   const nodeVals = [];
@@ -45,7 +45,7 @@ for (let i = 1; i < numArr.length; i++) {
   mover = temp;
 }
 
-const result = isPalindromeBruteForce(head);
+const result = isPalindrome(head);
 
 console.log(result);
 
