@@ -29,6 +29,7 @@ function getIntersectionNode(headA, headB) {
   return null;
 }
 
+// Create first list A: [1, 2, 3]
 const numArrOne = [1, 2, 3];
 
 const headA = new Node(numArrOne[0]);
@@ -40,6 +41,7 @@ for (let i = 1; i < numArrOne.length; i++) {
   moverA = temp;
 }
 
+// Create second list B: [7, 8]
 const numArrTwo = [7, 8];
 
 const headB = new Node(numArrTwo[0]);
@@ -51,6 +53,7 @@ for (let i = 1; i < numArrTwo.length; i++) {
   moverB = temp;
 }
 
+// Create shared tail: [4, 5]
 const sharedArr = [4, 5];
 
 const sharedHead = new Node(sharedArr[0]);
@@ -62,6 +65,7 @@ for (let i = 1; i < sharedArr.length; i++) {
   moverShared = temp;
 }
 
+// Connect the shared tail to both lists
 moverA.next = sharedHead;
 moverB.next = sharedHead;
 
