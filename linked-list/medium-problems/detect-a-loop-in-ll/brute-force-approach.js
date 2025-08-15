@@ -7,7 +7,7 @@ class Node {
   }
 }
 
-function hasCycleSet(head) {
+function detectLoopInLL(head) {
   const seen = new Set(); // stores node references we have already seen
 
   let currentNode = head;
@@ -39,7 +39,7 @@ for (let i = 1; i < numArr.length; i++) {
 // Creating a loop: last node points to node with value 2
 mover.next = head.next;
 
-console.log(hasCycleSet(head));
+console.log(detectLoopInLL(head));
 
 // Time complexity: O(n)
 // Space complexity: O(n)
