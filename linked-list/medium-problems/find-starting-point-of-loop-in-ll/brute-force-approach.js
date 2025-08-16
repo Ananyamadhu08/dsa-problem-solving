@@ -41,7 +41,9 @@ for (let i = 1; i < numArr.length; i++) {
 // Creating a loop: last node points to node with value 2
 mover.next = head.next;
 
-console.log(findStartingPointOfLoopInLL(head));
+const result = findStartingPointOfLoopInLL(head);
+
+console.log(result);
 
 // Time complexity: O(n)
 // Space complexity: O(n)
