@@ -59,6 +59,8 @@ function reverseKGroupOptimal(head, k) {
 
 const numArr = [1, 2, 3, 4, 5];
 
+const k = 2;
+
 const head = new Node(numArr[0]);
 let mover = head;
 
@@ -68,7 +70,7 @@ for (let i = 1; i < numArr.length; i++) {
   mover = temp;
 }
 
-const result = reverseKGroupOptimal(head, 2);
+const result = reverseKGroupOptimal(head, k);
 
 console.log(result);
 
