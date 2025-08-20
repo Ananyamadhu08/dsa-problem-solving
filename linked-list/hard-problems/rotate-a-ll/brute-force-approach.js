@@ -24,7 +24,7 @@ function moveLastToFront(head) {
 }
 
 // Perform 1 right shift, k times. Each single shift moves the last node to become the new head.
-function rotateRightBrute(head, k) {
+function rotateLL(head, k) {
   if (!head || !head.next || k === 0) return head; // nothing to do
 
   // Repeat k times (inefficient if k is large)
@@ -48,7 +48,7 @@ for (let i = 1; i < numArr.length; i++) {
   mover = temp;
 }
 
-const result = rotateRightBrute(head, k);
+const result = rotateLL(head, k);
 console.log(result);
 
 // Time complexity: O(k * n) | for each of the k shifts, we walk through the list (O(n))
