@@ -4,8 +4,8 @@
 // Each of these child linked lists is in sorted order and connected by a 'child' pointer. Flatten this linked list such that all nodes appear in a single sorted layer connected by the 'child' pointer and return the head of the modified list.
 
 class Node {
-  constructor(val, next = null, child = null) {
-    this.val = val;
+  constructor(value, next = null, child = null) {
+    this.value = value;
     this.next = next;
     this.child = child;
   }
@@ -28,7 +28,7 @@ function flattenLL(head) {
   }
 
   // Sort nodes by their values
-  nodes.sort((a, b) => a.val - b.val);
+  nodes.sort((a, b) => a.value - b.value);
 
   // Relink nodes into a single list using child, clear next pointers
   for (let i = 0; i < nodes.length; i++) {
