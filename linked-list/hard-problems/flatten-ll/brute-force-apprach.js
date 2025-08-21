@@ -11,7 +11,7 @@ class Node {
   }
 }
 
-function flattenBrute(head) {
+function flattenLL(head) {
   if (head === null) return null; // Empty list
 
   const nodes = [];
@@ -66,7 +66,7 @@ for (let arr of lists) {
   prevHead = headNode;
 }
 
-const result = flattenBrute(head);
+const result = flattenLL(head);
 
 console.log(result);
 
