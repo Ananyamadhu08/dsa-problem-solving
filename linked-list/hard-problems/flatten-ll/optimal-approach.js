@@ -96,7 +96,7 @@ class MinHeap {
   }
 }
 
-function flattenHeap(head) {
+function flattenLL(head) {
   if (!head) return null;
 
   // Seed heap with each list's head (walk across via `next`)
@@ -153,7 +153,7 @@ for (let arr of lists) {
   prevHead = headNode;
 }
 
-const result = flattenBrute(head);
+const result = flattenLL(head);
 
 console.log(result);
 
