@@ -4,8 +4,8 @@
 // Each of these child linked lists is in sorted order and connected by a 'child' pointer. Flatten this linked list such that all nodes appear in a single sorted layer connected by the 'child' pointer and return the head of the modified list.
 
 class Node {
-  constructor(val, next = null, child = null) {
-    this.val = val;
+  constructor(value, next = null, child = null) {
+    this.value = value;
     this.next = next;
     this.child = child;
   }
@@ -20,7 +20,7 @@ function mergeTwoLists(list1, list2) {
   let pointer2 = list2;
 
   while (pointer1 && pointer2) {
-    if (pointer1.val <= pointer2.val) {
+    if (pointer1.value <= pointer2.value) {
       const nextNode = pointer1.child; // remember next before rewiring
       pointer1.next = null; // across links not used in result
       pointer1.child = null; // detach old child link
@@ -56,6 +56,7 @@ function flattenLL(head) {
 
   // Gather all column heads by walking the `next` chain
   let listHeads = [];
+
   for (let currentHead = head; currentHead; currentHead = currentHead.next) {
     listHeads.push(currentHead);
   }
@@ -66,6 +67,7 @@ function flattenLL(head) {
   // Iteratively merge pairs until a single list remains
   while (listHeads.length > 1) {
     const mergedLists = [];
+
     for (let i = 0; i < listHeads.length; i += 2) {
       if (i + 1 < listHeads.length) {
         mergedLists.push(mergeTwoLists(listHeads[i], listHeads[i + 1]));
@@ -73,6 +75,7 @@ function flattenLL(head) {
         mergedLists.push(listHeads[i]); // odd one out, carry forward
       }
     }
+
     listHeads = mergedLists; // move to next round
   }
 
