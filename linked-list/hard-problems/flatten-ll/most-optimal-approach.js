@@ -14,37 +14,37 @@ class Node {
 // Merge two sorted child-chains in-place, return merged head.
 function mergeTwoLists(listOne, listTwo) {
   const dummyHead = new Node(-1);
-  let tail = dummyHead;
+  let current = dummyHead;
 
-  let pointer1 = listOne;
-  let pointer2 = listTwo;
+  let pointerOne = listOne;
+  let pointerTwo = listTwo;
 
-  while (pointer1 && pointer2) {
-    if (pointer1.value <= pointer2.value) {
-      const nextDown = pointer1.child; // remember next before rewiring
-      pointer1.next = null; // across links not used in result
-      pointer1.child = null; // detach old child link
-      tail.child = pointer1; // append
-      tail = pointer1; // advance tail
-      pointer1 = nextDown; // move down in listOne
+  while (pointerOne && pointerTwo) {
+    if (pointerOne.value <= pointerTwo.value) {
+      const nextDown = pointerOne.child; // remember next before rewiring
+      pointerOne.next = null; // across links not used in result
+      pointerOne.child = null; // detach old child link
+      current.child = pointerOne; // append
+      current = pointerOne; // advance current
+      pointerOne = nextDown; // move down in listOne
     } else {
-      const nextDown = pointer2.child;
-      pointer2.next = null;
-      pointer2.child = null;
-      tail.child = pointer2;
-      tail = pointer2;
-      pointer2 = nextDown;
+      const nextDown = pointerTwo.child;
+      pointerTwo.next = null;
+      pointerTwo.child = null;
+      current.child = pointerTwo;
+      current = pointerTwo;
+      pointerTwo = nextDown;
     }
   }
 
   // Attach remaining nodes from whichever list is not empty (and sanitize links)
-  let remaining = pointer1 || pointer2;
+  let remaining = pointerOne || pointerTwo;
   while (remaining) {
     const nextDown = remaining.child;
     remaining.next = null;
     remaining.child = null;
-    tail.child = remaining;
-    tail = remaining;
+    current.child = remaining;
+    current = remaining;
     remaining = nextDown;
   }
 
