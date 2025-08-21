@@ -4,8 +4,8 @@
 // Each of these child linked lists is in sorted order and connected by a 'child' pointer. Flatten this linked list such that all nodes appear in a single sorted layer connected by the 'child' pointer and return the head of the modified list.
 
 class Node {
-  constructor(val, next = null, child = null) {
-    this.val = val;
+  constructor(value, next = null, child = null) {
+    this.value = value;
     this.next = next;
     this.child = child;
   }
@@ -44,7 +44,7 @@ class MinHeap {
       const parentIndex = Math.floor((childIndex - 1) / 2);
 
       // If parent is already smaller or equal, heap property holds
-      if (this.heap[parentIndex].val <= this.heap[childIndex].val) break;
+      if (this.heap[parentIndex].value <= this.heap[childIndex].value) break;
 
       // Otherwise, swap child and parent
       [this.heap[parentIndex], this.heap[childIndex]] = [
@@ -68,7 +68,7 @@ class MinHeap {
       // Compare with left child
       if (
         leftChildIndex < length &&
-        this.heap[leftChildIndex].val < this.heap[smallestIndex].val
+        this.heap[leftChildIndex].value < this.heap[smallestIndex].value
       ) {
         smallestIndex = leftChildIndex;
       }
@@ -76,7 +76,7 @@ class MinHeap {
       // Compare with right child
       if (
         rightChildIndex < length &&
-        this.heap[rightChildIndex].val < this.heap[smallestIndex].val
+        this.heap[rightChildIndex].value < this.heap[smallestIndex].value
       ) {
         smallestIndex = rightChildIndex;
       }
@@ -102,8 +102,8 @@ function flattenLL(head) {
   // Seed heap with each list's head (walk across via `next`)
   const heap = new MinHeap();
 
-  for (let h = head; h; h = h.next) {
-    heap.push(h);
+  for (let currentHead = head; currentHead; currentHead = currentHead.next) {
+    heap.push(currentHead);
   }
 
   // Build the output list via `child` only
