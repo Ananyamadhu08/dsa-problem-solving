@@ -39,7 +39,6 @@ function flattenBrute(head) {
   return nodes[0] || null;
 }
 
-// Example usage
 const lists = [
   [3, 7, 11],
   [1, 5, 9],
