@@ -7,7 +7,7 @@ class Node {
   }
 }
 
-function sortListBrute(head) {
+function sortLL(head) {
   if (head === null || head.next === null) return head; // Empty or single node → already sorted
 
   // Collect all values into an array
@@ -45,7 +45,7 @@ for (let i = 1; i < numArr.length; i++) {
   mover = temp;
 }
 
-const result = sortListBrute(head);
+const result = sortLL(head);
 
 console.log(result);
 
