@@ -46,8 +46,8 @@ function sortLL(head) {
   prev.next = null; // Cut the list into two halves
 
   // Recursively sort each half
-  const leftHalf = sortListMergeSort(head);
-  const rightHalf = sortListMergeSort(slow);
+  const leftHalf = sortLL(head);
+  const rightHalf = sortLL(slow);
 
   // Merge the two sorted halves
   return mergeTwoSortedLists(leftHalf, rightHalf);
