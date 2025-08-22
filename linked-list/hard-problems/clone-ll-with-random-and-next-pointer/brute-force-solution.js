@@ -83,9 +83,9 @@ nodesArray[2].random = nodesArray[4]; // 3.random = 5
 nodesArray[3].random = nodesArray[1]; // 4.random = 2
 nodesArray[4].random = nodesArray[2]; // 5.random = 3
 
-const cloneHead = cloneRandomList(head);
+const result = cloneRandomList(head);
 
-console.log(cloneHead);
+console.log(result);
 
-// Time complexity: O(n^2) - scanning for each node’s random target
-// Space complexity: O(n) - clones array (excluding output list)
+// Time complexity: O(n^2) | scanning for each node’s random target
+// Space complexity: O(n) | clones array (excluding output list)
