@@ -8,7 +8,7 @@ class Node {
   }
 }
 
-function deleteAllOccurrencesBrute(head, target) {
+function deleteAllOccurrences(head, target) {
   if (head === null) return null;
 
   let newHead = null;
@@ -51,7 +51,7 @@ for (let i = 1; i < numArr.length; i++) {
   mover = temp;
 }
 
-const result = deleteAllOccurrencesBrute(head, target);
+const result = deleteAllOccurrences(head, target);
 
 console.log(result);
 
