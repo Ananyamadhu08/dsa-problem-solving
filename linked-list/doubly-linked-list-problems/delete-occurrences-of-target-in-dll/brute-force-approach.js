@@ -15,10 +15,12 @@ function deleteAllOccurrencesBrute(head, target) {
   let newTail = null;
 
   let current = head;
+
   while (current !== null) {
     if (current.value !== target) {
       // Create a new node and append to the new DLL
       const node = new Node(current.value);
+
       if (newHead === null) {
         newHead = node;
         newTail = node;
@@ -28,6 +30,7 @@ function deleteAllOccurrencesBrute(head, target) {
         newTail = node;
       }
     }
+
     current = current.next;
   }
 
