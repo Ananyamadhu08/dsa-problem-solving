@@ -8,8 +8,8 @@
 // - random_index: index of the node (0 - n-1) that the random pointer points to, otherwise -1.
 
 class Node {
-  constructor(val, next = null, random = null) {
-    this.val = val;
+  constructor(value, next = null, random = null) {
+    this.value = value;
     this.next = next;
     this.random = random;
   }
@@ -26,7 +26,7 @@ function cloneRandomList(head) {
   const clones = []; // clones[i] = clone of original node at index i
 
   while (originalNode) {
-    const clone = new Node(originalNode.val);
+    const clone = new Node(originalNode.value);
     tail.next = clone;
     tail = clone;
     clones.push(clone);
