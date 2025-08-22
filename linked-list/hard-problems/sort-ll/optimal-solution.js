@@ -28,7 +28,7 @@ function mergeTwoSortedLists(listOne, listTwo) {
   return dummy.next;
 }
 
-function sortListMergeSort(head) {
+function sortLL(head) {
   if (head === null || head.next === null) return head; // Empty or single node → already sorted
 
   // Split the list into two halves using slow/fast pointers
@@ -64,7 +64,7 @@ for (let i = 1; i < numArr.length; i++) {
   mover = temp;
 }
 
-const result = sortListMergeSort(head);
+const result = sortLL(head);
 
 console.log(result);
 
