@@ -16,3 +16,6 @@ function pow(x, n) {
 let result = pow(2, 3);
 
 console.log(result);
+
+// Time complexity: O(|n|)
+// Space complexity: O(|n|)
