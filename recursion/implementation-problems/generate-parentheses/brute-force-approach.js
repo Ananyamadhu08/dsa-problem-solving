@@ -33,7 +33,7 @@ function buildParentheses(position, currentString, totalLength, results) {
   buildParentheses(position + 1, currentString + ")", totalLength, results);
 }
 
-function generateAllParenthesesBrute(n) {
+function generateAllParentheses(n) {
   const results = [];
   const totalLength = 2 * n;
 
@@ -43,7 +43,7 @@ function generateAllParenthesesBrute(n) {
   return results;
 }
 
-const result = generateAllParenthesesBrute(3);
+const result = generateAllParentheses(3);
 
 console.log(result);
 
