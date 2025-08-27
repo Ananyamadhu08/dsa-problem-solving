@@ -28,7 +28,9 @@ function generateSubsets(nums) {
   return allSubsets;
 }
 
-const result = generateSubsets([1, 2, 3]);
+const numArr = [1, 2, 3];
+
+const result = generateSubsets(numArr);
 
 console.log(result);
 
