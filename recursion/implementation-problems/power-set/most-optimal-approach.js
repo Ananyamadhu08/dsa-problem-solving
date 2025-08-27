@@ -1,19 +1,29 @@
 // Given an array of integers nums of unique elements. Return all possible subsets (power set) of the array. Do not include the duplicates in the answer.
 
 function generateSubsets(nums) {
-  const allSubsets = [];
+  const allSubsets = []; // stores all subsets we generate
 
+  // Recursively explore subsets starting from index `startIndex`
   function explore(startIndex, currentSubset) {
+    // Record a snapshot of the current subset (it's always a valid subset)
     allSubsets.push(currentSubset.slice());
 
-    for (let nextIndex = startIndex; nextIndex < nums.length; nextIndex++) {
-      currentSubset.push(nums[nextIndex]);
-      explore(nextIndex + 1, currentSubset);
+    // Try including each element starting from `startIndex`
+    for (let position = startIndex; position < nums.length; position++) {
+      // Choose: include nums[position] in the current subset
+      currentSubset.push(nums[position]);
+
+      // Explore: recursively build subsets with nums[position] included
+      explore(position + 1, currentSubset);
+
+      // Un-choose (backtrack): remove nums[position] and try the next element
       currentSubset.pop();
     }
   }
 
+  // Start exploring from index 0 with an initially empty subset
   explore(0, []);
+
   return allSubsets;
 }
 
