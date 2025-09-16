@@ -3,7 +3,7 @@
 // - A single use is made of each number.
 // Return list of every feasible combination that is allowed. The combinations can be returned in any order, but the list cannot have the same combination twice.
 
-function combinationSum3_Optimal(k, target) {
+function combinationSum(k, target) {
   const allCombinations = [];
 
   function backtrack(currentNumber, numbersLeft, remainingSum, currentCombo) {
@@ -38,7 +38,7 @@ const k = 3;
 
 const target = 7;
 
-const result = combinationSum3_Optimal(k, target);
+const result = combinationSum(k, target);
 
 console.log(result);
 
