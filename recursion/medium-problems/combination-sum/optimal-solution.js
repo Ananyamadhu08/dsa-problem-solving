@@ -15,20 +15,27 @@ function combinationSum(candidates, target) {
 
     for (let index = candidateIndex; index < candidates.length; index++) {
       const chosenNumber = candidates[index]; // choose a number at or after candidateIndex
+
       currentCombination.push(chosenNumber); // make the choice
+
       backtrack(index, remainingTarget - chosenNumber, currentCombination); // reuse allowed, so index stays the same
+
       currentCombination.pop(); // undo the choice (backtrack)
     }
   }
 
   backtrack(0, target, []);
+
   return allCombinations;
 }
 
 const candidates = [2, 3, 5, 4];
+
 const target = 7;
+
 const result = combinationSum(candidates, target);
-console.log(result); // [ [2, 2, 3], [2, 5], [3, 4] ]
+
+console.log(result);
 
 // Time complexity: O(m^(T/minValue)) | m choices per step, depth up to T/minValue; avoids permutations via start index
 // Space complexity: O(T/minValue) | recursion depth proportional to longest combination; output not counted
