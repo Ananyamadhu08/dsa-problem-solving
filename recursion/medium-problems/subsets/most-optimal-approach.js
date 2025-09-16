@@ -1,6 +1,6 @@
 // Given an array nums of n integers. Return array of sum of all subsets of the array nums. Output can be returned in any order.
 
-function generateSubsetSumsHalf(nums) {
+function generateSubsetSums(nums) {
   const middleIndex = Math.floor(nums.length / 2);
 
   const leftHalf = nums.slice(0, middleIndex);
@@ -45,7 +45,7 @@ function generateSubsetSumsHalf(nums) {
 
 const nums = [5, 2, 1];
 
-const result = generateSubsetSumsHalf(nums);
+const result = generateSubsetSums(nums);
 
 console.log(result);
 
