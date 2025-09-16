@@ -23,7 +23,7 @@ function generateSubsetSums(nums) {
   return subsetSums;
 }
 
-const nums = [2, 3];
+const nums = [5, 2, 1];
 
 const result = generateSubsetSums(nums);
 
