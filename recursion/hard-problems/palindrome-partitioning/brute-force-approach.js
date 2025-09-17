@@ -2,13 +2,18 @@
 
 // Check if a single string is a palindrome
 function isPalindrome(str) {
-  let left = 0,
-    right = str.length - 1;
+  let left = 0;
+  let right = str.length - 1;
+
   while (left < right) {
-    if (str[left] !== str[right]) return false;
+    if (str[left] !== str[right]) {
+      return false;
+    }
+
     left++;
     right--;
   }
+
   return true;
 }
 
@@ -17,6 +22,7 @@ function isValidPalindromePartition(partition) {
   for (const substring of partition) {
     if (!isPalindrome(substring)) return false;
   }
+
   return true;
 }
 
@@ -24,7 +30,7 @@ function palindromePartitioning(str) {
   const allPartitions = []; // Stores all valid palindrome partitions
   const currentPartition = []; // Tracks the current partition being built
 
-  // Helper: recursively try placing a cut after index `startIndex`
+  // Recursively try placing a cut after index `startIndex`
   function generatePartitions(startIndex) {
     if (startIndex === str.length) {
       // Reached the end; check if all substrings are palindromes
@@ -54,7 +60,7 @@ function palindromePartitioning(str) {
 
 const str = "aabaa";
 
-const result = palindromePartitioningBruteForce(str);
+const result = palindromePartitioning(str);
 
 console.log(result);
 
