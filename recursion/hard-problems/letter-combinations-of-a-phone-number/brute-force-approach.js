@@ -24,7 +24,7 @@ Digits 2–9 are valid inputs:
 - 9 → "wxyz"
 */
 
-function letterCombinationsBrute(digits) {
+function phoneLetterCombinations(digits) {
   if (!digits || digits.length === 0) return [];
 
   // Phone keypad mapping with numeric keys
@@ -64,7 +64,7 @@ function letterCombinationsBrute(digits) {
 
 const digits = "34";
 
-const result = letterCombinationsBrute(digits);
+const result = phoneLetterCombinations(digits);
 
 console.log(result);
 
