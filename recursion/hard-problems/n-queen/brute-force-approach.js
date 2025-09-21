@@ -1,6 +1,4 @@
-// N-Queens (Brute Force, Recursion-Only)
-// Place n queens on an n×n chessboard so that no two queens attack each other.
-// Return every valid board as an array of strings ('.' for empty, 'Q' for queen).
+// The challenge of arranging n queens on a n × n chessboard so that no two queens attack one another is known as the "n-queens puzzle". Return every unique solution to the n-queens puzzle given an integer n. The answer can be returned in any sequence. Every solution has a unique board arrangement for the placement of the n-queens, where 'Q' and '.' stand for a queen and an empty space, respectively.
 
 // Validate a completed placement by checking all queen pairs
 function isConfigurationValid(queenPositionsByRow, boardSize) {
