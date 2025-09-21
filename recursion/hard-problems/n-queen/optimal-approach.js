@@ -15,6 +15,7 @@ function convertToBoardRepresentation(queenColumnPositions, boardSize) {
 
 function nQueens(boardSize) {
   const allBoards = []; // Store every valid board we discover
+
   const queenColumnPositions = Array(boardSize).fill(-1); // queenColumnPositions[row] = column index
 
   const usedColumns = new Set(); // Track columns that already have queens
@@ -28,6 +29,7 @@ function nQueens(boardSize) {
       allBoards.push(
         convertToBoardRepresentation(queenColumnPositions, boardSize)
       );
+
       return; // Return to explore other column choices
     }
 
