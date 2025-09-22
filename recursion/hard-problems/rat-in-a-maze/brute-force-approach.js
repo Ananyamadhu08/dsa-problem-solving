@@ -39,6 +39,7 @@ function ratInMaze(grid) {
       rowIndex < gridSize &&
       colIndex >= 0 &&
       colIndex < gridSize;
+
     if (!isInsideBounds) return false;
 
     const isOpenCell = grid[rowIndex][colIndex] === 1;
