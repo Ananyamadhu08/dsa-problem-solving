@@ -80,14 +80,14 @@ function ratInMaze(grid) {
   return allPaths;
 }
 
-const exampleGrid = [
+const grid = [
   [1, 0, 0, 0],
   [1, 1, 0, 1],
   [1, 1, 0, 0],
   [0, 1, 1, 1],
 ];
 
-const result = ratInMaze(exampleGrid);
+const result = ratInMaze(grid);
 
 console.log(result);
 
