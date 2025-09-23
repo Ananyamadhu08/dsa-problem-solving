@@ -31,7 +31,7 @@ function isColoringValid(vertexColors, adjacencyList) {
   return true;
 }
 
-function colorGraphBruteForce(colors, vertices, edges) {
+function colorGraph(colors, vertices, edges) {
   // If we have as many colors as vertices, we can give each vertex a unique color → always valid
   if (colors === vertices) return true;
 
@@ -79,7 +79,7 @@ const edges = [
   [0, 2],
 ];
 
-const result = colorGraphBruteForce(colors, vertices, edges);
+const result = colorGraph(colors, vertices, edges);
 
 console.log(result);
 
