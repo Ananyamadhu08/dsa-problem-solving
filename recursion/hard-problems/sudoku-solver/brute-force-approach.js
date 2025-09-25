@@ -48,7 +48,7 @@ function solveSudoku(board) {
   const boardSize = 9;
   const totalCells = boardSize * boardSize;
 
-  function solveFromCellIndex(linearCellIndex) {
+  function solve(linearCellIndex) {
     // Base case: all 81 cells processed
     if (linearCellIndex === totalCells) return true;
 
@@ -57,7 +57,7 @@ function solveSudoku(board) {
 
     // If already filled, move to the next cell
     if (board[currentRowIndex][currentColIndex] !== ".") {
-      return solveFromCellIndex(linearCellIndex + 1);
+      return solve(linearCellIndex + 1);
     }
 
     // Try digits '1'..'9'
@@ -76,7 +76,7 @@ function solveSudoku(board) {
         board[currentRowIndex][currentColIndex] = candidateDigitChar;
 
         // Explore
-        if (solveFromCellIndex(linearCellIndex + 1)) return true;
+        if (solve(linearCellIndex + 1)) return true;
 
         // Undo (backtrack)
         board[currentRowIndex][currentColIndex] = ".";
@@ -87,7 +87,7 @@ function solveSudoku(board) {
     return false;
   }
 
-  solveFromCellIndex(0);
+  solve(0);
 }
 
 const board = [
